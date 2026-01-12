@@ -252,6 +252,12 @@ dependencies {
     implementation(project(":pump:rileylink"))
     implementation(project(":pump:virtual"))
     implementation(project(":workflow"))
+    // 补充：动态权限申请核心依赖（安卓X Core KTX）
+    implementation(libs.androidx.core.ktx)
+    // 补充：Activity KTX（简化Activity中的权限申请流程）
+    implementation(libs.androidx.activity.ktx)
+    // 补充：AppCompat（兼容低版本安卓，提升权限申请弹窗兼容性）
+    implementation(libs.androidx.appcompat)
 
     testImplementation(project(":shared:tests"))
     androidTestImplementation(project(":shared:tests"))
