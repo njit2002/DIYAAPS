@@ -15,6 +15,10 @@ kotlinx-coroutines = "1.10.2"
 work = "2.11.0"
 datastorePreferences = "1.2.0"
 annotation = "1.9.1"
+# 原有其他版本配置保留（如minSdk、targetSdk等）
+androidx-core = "1.12.0"    # 对应core-ktx的版本
+androidx-activity = "1.8.0" # 对应activity-ktx的版本
+androidx-appcompat = "1.6.1" # 补充appcompat的版本（避免后续appcompat依赖报错）
 
 # Compose
 activityCompose = "1.12.2"
@@ -36,6 +40,14 @@ compose-compiler = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "
 [libraries]
 com-android-tools-build = { group = "com.android.tools.build", name = "gradle", version.ref = "gradlePlugin" }
 com-google-gms = { group = "com.google.gms", name = "google-services", version.ref = "googleServices" }
+
+
+# 补充core-ktx依赖
+androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
+# 补充activity-ktx依赖
+androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
+# 补充appcompat依赖（对应你之前添加的implementation(libs.androidx.appcompat)）
+androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
 
 com-google-dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 com-google-dagger-android = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
