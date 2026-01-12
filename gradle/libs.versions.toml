@@ -46,8 +46,7 @@ com-google-gms = { group = "com.google.gms", name = "google-services", version.r
 androidx-core-ktx = { module = "androidx.core:core-ktx", version.ref = "androidx-core" }
 # 补充activity-ktx依赖
 androidx-activity-ktx = { module = "androidx.activity:activity-ktx", version.ref = "androidx-activity" }
-# 补充appcompat依赖（对应你之前添加的implementation(libs.androidx.appcompat)）
-androidx-appcompat = { module = "androidx.appcompat:appcompat", version.ref = "androidx-appcompat" }
+
 
 com-google-dagger-compiler = { group = "com.google.dagger", name = "dagger-compiler", version.ref = "dagger" }
 com-google-dagger-android = { group = "com.google.dagger", name = "dagger-android", version.ref = "dagger" }
