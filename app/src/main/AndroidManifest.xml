@@ -6,14 +6,6 @@
                      android:minSdkVersion="31" />
     <uses-permission android:name="android.permission.BLUETOOTH_SCAN"
                      android:minSdkVersion="31" />
-    <!-- 安卓11（API 30）必需的传统蓝牙权限，保留代码并正常生效 -->
-    <uses-permission android:name="android.permission.BLUETOOTH" />
-    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
-    <!-- 安卓11（API 30）必需的传统蓝牙权限，保留代码并正常生效 -->
-    <!-- 声明APP支持蓝牙和低功耗蓝牙（BLE），false表示无蓝牙硬件也可安装 -->
-    <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
-    <uses-feature android:name="android.hardware.bluetooth_le" android:required="false" />
-     <!-- 声明APP支持蓝牙和低功耗蓝牙（BLE），false表示无蓝牙硬件也可安装 -->
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
