@@ -60,24 +60,19 @@ class BTReceiver : DaggerBroadcastReceiver() {
         }
     }
 
-    /**
-     * 兼容 Android 11 / Android 12+ 的蓝牙权限判断
-     */
-    private fun hasBluetoothPermission(context: Context): Boolean {
-        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
-            ContextCompat.checkSelfPermission(
-                context,
-                Manifest.permission.BLUETOOTH_CONNECT
-            ) == PackageManager.PERMISSION_GRANTED
-        } else {
-            ContextCompat.checkSelfPermission(
-                context,
-                Manifest.permission.BLUETOOTH
-            ) == PackageManager.PERMISSION_GRANTED &&
-            ContextCompat.checkSelfPermission(
-                context,
-                Manifest.permission.BLUETOOTH_ADMIN
-            ) == PackageManager.PERMISSION_GRANTED
-        }
+/**
+ * 兼容 Android 11 / Android 12+ 的蓝牙权限判断
+ */
+private fun hasBluetoothPermission(context: Context): Boolean {
+    return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+        // Android 12+ 必须显式授予
+        ContextCompat.checkSelfPermission(
+            context,
+            Manifest.permission.BLUETOOTH_CONNECT
+        ) == PackageManager.PERMISSION_GRANTED
+    } else {
+        // Android 11 及以下：蓝牙权限为安装时权限，直接视为已授权
+        true
     }
 }
+
